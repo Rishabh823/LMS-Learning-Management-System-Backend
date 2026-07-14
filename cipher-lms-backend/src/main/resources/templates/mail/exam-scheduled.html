@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Scheduled</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            max-width: 750px;
+            margin: 20px auto;
+            background: #d7e3ef;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 36px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            background: #f0f5f9;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #013bc4;
+        }
+
+        .credentials {
+            background: #f8fafc;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #10b981;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 8px 4px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background: #013bc4;
+            color: #ffffff !important;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .highlight {
+            color: #013bc4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="outer">
+
+    <div class="email-container">
+
+        <div class="header">
+            <h1>
+                <span style="color:#013bc4">Cyber</span>
+                <span style="color:#1b2336">Sigma</span>
+            </h1>
+        </div>
+
+        <p>
+            Hello <strong th:text="${studentName}">Student</strong>,
+        </p>
+
+        <p>
+            An examination has been scheduled for your group. Please review the details below and ensure you attempt the exam within the scheduled time window.
+        </p>
+
+        <div class="details">
+
+            <h3 style="margin-top:0;">
+                Exam Details
+            </h3>
+
+            <table class="info-table">
+
+                <tr>
+                    <td><strong>Exam Name</strong></td>
+                    <td th:text="${examName}">Java Assessment</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Group</strong></td>
+                    <td th:text="${groupName}">Group A</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Institute</strong></td>
+                    <td th:text="${institute}">ABC Institute</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>
+                        <span th:text="${duration}">60</span> Minutes
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>Passing Marks</strong></td>
+                    <td>
+                        <span th:text="${passingMarks}">70</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>Start Date</strong></td>
+                    <td th:text="${startDate}">
+                        01 Jan 2026 10:00 AM
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>End Date</strong></td>
+                    <td th:text="${endDate}">
+                        01 Jan 2026 11:00 AM
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="credentials">
+
+            <h3 style="margin-top:0;">
+                Login Credentials
+            </h3>
+
+            <table class="info-table">
+
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td th:text="${email}">
+                        student@example.com
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>Password</strong></td>
+                    <td th:text="${password}">
+                        ********
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="button-container">
+            <a class="button"
+               th:href="${loginUrl}">
+                Login To Exam Portal
+            </a>
+        </div>
+
+        <p>
+            Please keep your credentials secure and ensure you have a stable internet connection before starting the examination.
+        </p>
+
+        <p>
+            We wish you the very best for your assessment.
+        </p>
+
+        <p>
+            Best Regards,<br/>
+            Assessment Team,<br/>
+            Cybersigma Consulting Services
+        </p>
+
+        <div class="footer">
+            Delivered by <b>Cybersigma Consulting Services</b>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

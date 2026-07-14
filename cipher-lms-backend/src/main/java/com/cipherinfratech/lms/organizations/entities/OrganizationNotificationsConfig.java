@@ -1,0 +1,4 @@
+package com.cipherinfratech.lms.organizations.entities;
+
+public class OrganizationNotificationsConfig {
+}
